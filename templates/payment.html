@@ -1,0 +1,17 @@
+{% extends 'checkout.html' %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <pre>
+        Name_on_card:<input type="text" name="name" placeholder="HARITHA S DAS"><br>
+        Card_number :<input type="number" name="card_number" placeholder="1111-2222-3333-4444"><br>
+        Exp_month   :<input type="text" name="exp_month" placeholder="FEBRUARY"><br>
+        Exp_year    :<input type="number" name="exp_year" placeholder="2026"><br>
+        CVV         :<input type="number" name="cvv" placeholder="542"><br>
+        Total       :<input type="text" name="total" value="{{p}}"><br>
+        <input type="submit" value="Continue to checkout">
+
+    </pre>
+</form>
+<a href="my_orders">Back</a>
+{% endblock %}

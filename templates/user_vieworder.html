@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Book Store Template, Free CSS Template, TemplateMo.com</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="{% static 'templatemo_style.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!--  Free CSS Templates from www.templatemo.com -->
+<div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+             <li><a href="userhome">Home</a></li>
+            </ul>
+    </div> <!-- end of menu -->
+    <div id="templatemo_header">
+    	<div id="templatemo_special_offers">
+        	<p>
+                <span>25%</span> discounts for
+        purchase over  Rs.999
+        	</p>
+        </div>
+        <div id="templatemo_new_books">
+        	<ul>
+                <li>The kite runner</li>
+                <li>Beloved</li>
+                <li>Holly</li>
+            </ul>
+</div>
+    </div> <!-- end of header -->
+    <div id="templatemo_content">
+
+<center>
+<h1>My Orders</h1>
+    <table style="border:2px solid black; border-collapse:collapse;">
+        <thead>
+        <th style="border:2px solid black; border-collapse:collapse;">Book_id</th>
+        <th style="border:2px solid black; border-collapse:collapse;">Book_name</th>
+        <th style="border:2px solid black; border-collapse:collapse;">Quantity</th>
+        <th style="border:2px solid black; border-collapse:collapse;">price</th>
+        <th style="border:2px solid black; border-collapse:collapse;">Amount</th>
+        <th style="border:2px solid black; border-collapse:collapse;">Status</th>
+        </thead>
+        <tbody>
+        {% for i in s1 %}
+        <tr style="border:2px solid black; border-collapse:collapse;">
+            <td style="border:2px solid black; border-collapse:collapse;">{{i.book_id}}</td>
+            <td style="border:2px solid black; border-collapse:collapse;">{{i.book_name}}</td>
+            <td style="border:2px solid black; border-collapse:collapse;">{{i.quantity}}</td>
+            <td style="border:2px solid black; border-collapse:collapse;">{{i.price}}</td>
+            <td style="border:2px solid black; border-collapse:collapse;">{{i.amount}}</td>
+            <td style="border:2px solid black; border-collapse:collapse;">{{i.status}}</td>
+            {% if i.status  == "Approved" %}
+            <td style="border:2px solid black; border-collapse:collapse;"><a href="payment/{{i.id}}/{{i.amount}}">Make Payment</a></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</center>
+        </div>
+    <br><br><br><br><br><br><br><br><br><br><!-- end of content -->
+
+    <div id="templatemo_footer">
+
+	</div>
+</body>
+</html>

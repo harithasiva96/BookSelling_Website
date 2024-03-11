@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Book Store Template, Free CSS Template, TemplateMo.com</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="{% static 'templatemo_style.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!--  Free CSS Templates from www.templatemo.com -->
+<div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+             <li><a href="userhome">Home</a></li>
+               	</ul>
+    </div> <!-- end of menu -->
+    <div id="templatemo_header">
+
+    	<div id="templatemo_special_offers">
+        	<p>
+                <span>25%</span> discounts for
+        purchase over  Rs.999
+        	</p>
+        </div>
+
+        <div id="templatemo_new_books">
+        	<ul>
+                <li>The kite runner</li>
+                <li>Beloved</li>
+                <li>Holly</li>
+            </ul>
+        </div>
+    </div> <!-- end of header -->
+    <div id="templatemo_content">
+        <h1>Shop Books</h1>
+             {% if k1 %}
+             {% for u in k1 %}
+             <ul>
+             <li>book_name:{{u.book_name}}</li>
+             <li><img src="{{u.photo.url}}" alt="img" height="60px" width="60px"></li>
+             <li>price:{{u.price}}</li>
+             <li>author:{{u.author}}</li>
+             <a href="/buy/{{u.id}}">Buy_now</a>
+             </ul>
+             {% endfor %}
+             {% endif %}
+             <div class="cleaner_with_height">&nbsp;</div>
+            <a href="index.html"><img src="{% static 'images/logo1.gif' %}" alt="css template ad" /></a>
+<!--        </div> &lt;!&ndash; end of content right &ndash;&gt;-->
+        <div class="cleaner_with_height">&nbsp;</div>
+    </div> <!-- end of content -->
+    <div id="templatemo_footer">
+
+	</div> <!-- end of footer -->
+
+</div>
+</body>
+</html>

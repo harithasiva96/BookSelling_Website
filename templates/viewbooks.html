@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Book Store Template, Free CSS Template, TemplateMo.com</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="{% static 'templatemo_style.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!--  Free CSS Templates from www.templatemo.com -->
+<div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+             <li><a href="admin_home">Home</a></li>
+             	</ul>
+    </div> <!-- end of menu -->
+    <div id="templatemo_header">
+
+    	<div id="templatemo_special_offers">
+        	<p>
+                <span>25%</span> discounts for
+        purchase over  Rs.999
+        	</p>
+             </div>
+
+        <div id="templatemo_new_books">
+        	<ul>
+                <li>The kite runner</li>
+                <li>Beloved</li>
+                <li>Holly</li>
+            </ul>
+            </div>
+    </div> <!-- end of header -->
+    <div id="templatemo_content">
+<h1>Books</h1>
+{% if k1 %}
+{% for u in k1 %}
+<ul>
+    <li>book_name:{{u.book_name}}</li>
+    <li><img src="{{u.photo.url}}" alt="img" height="60px" width="60px"></li>
+    <li>price:{{u.price}}</li>
+    <li>author:{{u.author}}</li>
+    <a href="update/{{u.id}}">update</a>
+    <a href="delete/{{u.id}}">delete</a>
+</ul>
+{% endfor %}
+{% elif p %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <pre>
+    book_name:<input type="text" name="book_name" value="{{p.book_name}}"><br>
+    photo    :<input type="file" name="photo" value="{{p.photo.url}}"><br>
+    price    :<input type="number" name="price" value="{{p.price}}"><br>
+    author   :<input type="text" name="author" value="{{p.author}}"><br>
+    submit   :<input type="submit" value="ok">
+    </pre>
+</form>
+{% endif %}
+    </div> <!-- end of content -->
+    <div id="templatemo_footer">
+
+        </div> <!-- end of footer -->
+
+</div>
+
+</body>
+</html>
