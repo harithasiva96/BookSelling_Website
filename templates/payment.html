@@ -3,15 +3,14 @@
 <form method="POST">
     {% csrf_token %}
     <pre>
-        Name_on_card:<input type="text" name="name" placeholder="HARITHA S DAS"><br>
-        Card_number :<input type="number" name="card_number" placeholder="1111-2222-3333-4444"><br>
-        Exp_month   :<input type="text" name="exp_month" placeholder="FEBRUARY"><br>
-        Exp_year    :<input type="number" name="exp_year" placeholder="2026"><br>
-        CVV         :<input type="number" name="cvv" placeholder="542"><br>
-        Total       :<input type="text" name="total" value="{{p}}"><br>
-        <input type="submit" value="Continue to checkout">
+        <label style="color:white">Name_on_card:</label><input type="text" name="name" placeholder="HARITHA S DAS"><br>
+        <label style="color:white">Card_number :</label><input type="number" name="card_number" placeholder="1111-2222-3333-4444"><br>
+        <label style="color:white">Exp_month   :</label><input type="text" name="exp_month" placeholder="FEBRUARY"><br>
+        <label style="color:white">Exp_year    :</label><input type="number" name="exp_year" placeholder="2026"><br>
+        <label style="color:white">CVV         :</label><input type="number" name="cvv" placeholder="542"><br>
+        <label style="color:white">Total       :</label><input type="text" name="total" value="{{p}}"><br>
+        <input type="submit" class="btn-primary" value="Continue to checkout">
 
     </pre>
 </form>
-<a href="my_orders">Back</a>
 {% endblock %}
